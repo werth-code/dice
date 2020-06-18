@@ -1,12 +1,15 @@
-alert('Dice Game!')
-
-let diceRoll = document.querySelector('.dice-rolls')
+let diceRoll = document.querySelector('#dice-rolls-ui')
+let listItem = document.createElement('li')
 
 document.querySelector('#roll-button').onclick = () => {
     
+    let diceArray = []
     let total = 0
     let value = Math.floor(Math.random() * 6 ) + 1
     total += value
+    diceArray.push(value)
 
-    diceRoll.innerHTML += total
+    listItem.innerHTML = ('You Rolled ' + value)
+     diceRoll.appendChild(listItem)
+    
 }
