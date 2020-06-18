@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         for (let i of storedValues) {
 
             let listItem = document.createElement('li')
-            listItem.innerHTML += ('You Rolled ' + i)
+            listItem.innerHTML += (`You Rolled a ${i} <img src=\"dice-${i}.png\"></li>`)
             diceRoll.appendChild(listItem)
         }
     }
