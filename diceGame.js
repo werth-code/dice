@@ -1,15 +1,20 @@
-let diceRoll = document.querySelector('#dice-rolls-ui')
-let listItem = document.createElement('li')
+document.addEventListener('DOMContentLoaded', () => {
 
-document.querySelector('#roll-button').onclick = () => {
-    
-    let diceArray = []
-    let total = 0
-    let value = Math.floor(Math.random() * 6 ) + 1
-    total += value
-    diceArray.push(value)
+    document.querySelector('#roll-button').onclick = () => {
 
-    listItem.innerHTML = ('You Rolled ' + value)
-     diceRoll.appendChild(listItem)
-    
-}
+        let diceRoll = document.querySelector('#dice-rolls-ul')
+        let storedValues = []
+        
+        let value = Math.floor(Math.random() * 6) + 1
+        storedValues.push(value)
+
+        for (let i of storedValues) {
+
+            let listItem = document.createElement('li')
+            listItem.innerHTML += ('You Rolled ' + i)
+            diceRoll.appendChild(listItem)
+        }
+    }
+})
+
+
